@@ -5,7 +5,7 @@ package config;
 	import java.sql.SQLException;
 
 	public class DBConnector {
-		//connection for the database
+		//connection for database 
 		private static String url = "jdbc:mysql://127.0.0.1:1433/gadgetbadget";
 	    private static String driverName = "com.mysql.jdbc.Driver";
 	    private static String username = "root";

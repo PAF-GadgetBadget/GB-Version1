@@ -35,7 +35,8 @@ public class PaymentService {
 			@FormParam("orderId") int orderId) {
 		return this.payment.addPayment(cardType, cardNumber, nameOnCard, cvc, expireDate, status, paymentDate, orderId);	
 	}
-	//viewservice
+	
+	//view service
 	
 	
 	@GET
@@ -71,6 +72,7 @@ public class PaymentService {
 	
 	}
 	
+	//delete service
 	@DELETE
 	@Path("/delete/payment/{payment_id}")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
