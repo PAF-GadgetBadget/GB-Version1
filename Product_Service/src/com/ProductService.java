@@ -15,14 +15,14 @@ public class ProductService
 { 
 Product productObj = new Product(); 
 @GET
-@Path("/") 
+@Path("/getProduct") 
 @Produces(MediaType.TEXT_HTML) 
 public String readProducts() 
 {     
 return productObj.readProducts(); 
 } 
 @POST
-@Path("/") 
+@Path("/insertProduct") 
 @Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
 @Produces(MediaType.TEXT_PLAIN) 
 public String insertProduct(@FormParam("pTitle") String title, 
@@ -38,7 +38,7 @@ return output;
 
 
 @PUT
-@Path("/") 
+@Path("/updateProduct/{pId}") 
 @Consumes(MediaType.APPLICATION_JSON) 
 @Produces(MediaType.TEXT_PLAIN) 
 public String updateProduct(String productData) 
@@ -58,7 +58,7 @@ return output;
 }
 
 @DELETE
-@Path("/") 
+@Path("/deleteProduct/{pId}") 
 @Consumes(MediaType.APPLICATION_XML) 
 @Produces(MediaType.TEXT_PLAIN) 
 public String deleteProduct(String productData) 
