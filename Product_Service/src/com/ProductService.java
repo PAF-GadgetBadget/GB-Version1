@@ -39,4 +39,30 @@ public String readProducts()
 return productObj.readProducts(); 
 } 
 
+
+
+@PUT
+@Path("/") 
+@Consumes(MediaType.APPLICATION_JSON) 
+@Produces(MediaType.TEXT_PLAIN) 
+public String updateProduct(String productData) 
+{ 
+//Convert the input string to a JSON object 
+JsonObject productObject = new JsonParser().parse(productData).getAsJsonObject(); 
+//Read the values from the JSON object
+String pId = productObject.get("pId").getAsString(); 
+String pTitle = productObject.get("pTitle").getAsString(); 
+String pDesc = productObject.get("pDesc").getAsString(); 
+String pPrice = productObject.get("pPrice").getAsString(); 
+String resName = productObject.get("resName").getAsString();
+String date = productObject.get("date").getAsString(); 
+
+String output = productObj.updateProduct(pId, pTitle, pDesc,pPrice, resName, date); 
+return output; 
+}
+
+
+
+
+
 }
