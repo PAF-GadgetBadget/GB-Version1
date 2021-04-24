@@ -34,8 +34,8 @@ public class OrderService {
 		return Ord1.ReadOrders();
 	}
 	
-	
-	//get order by ID service
+	          
+	//get order by ID service    
 	@GET
 	@Path("/getOrderbyID/Ord1/{id}")
 	@Produces(MediaType.TEXT_HTML)
