@@ -13,7 +13,14 @@ import org.jsoup.nodes.Document;
 @Path("/Product") 
 public class ProductService 
 { 
-
+Product productObj = new Product(); 
+@GET
+@Path("/") 
+@Produces(MediaType.TEXT_HTML) 
+public String readProducts() 
+{     
+return productObj.readProducts(); 
+} 
 @POST
 @Path("/") 
 @Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
@@ -28,17 +35,6 @@ public String insertProduct(@FormParam("pTitle") String title,
 String output = productObj.insertProduct(title, desc, price, name, date); 
 return output; 
 }
-
-
-Product productObj = new Product(); 
-@GET
-@Path("/") 
-@Produces(MediaType.TEXT_HTML) 
-public String readProducts() 
-{     
-return productObj.readProducts(); 
-} 
-
 
 
 @PUT
@@ -61,7 +57,6 @@ String output = productObj.updateProduct(pId, pTitle, pDesc,pPrice, resName, dat
 return output; 
 }
 
-
 @DELETE
 @Path("/") 
 @Consumes(MediaType.APPLICATION_XML) 
@@ -76,7 +71,5 @@ String pId = doc.select("pId").text();
 String output = productObj.deleteProduct(pId); 
 return output; 
 }
-
-
 
 }
