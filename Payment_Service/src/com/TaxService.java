@@ -37,14 +37,14 @@ public class TaxService {
     }
 
     @GET
-    @Path("/getById")
+    @Path("/getById/{tax_id}")
     @Produces(MediaType.TEXT_HTML)
     public String getTaxEntryById(@PathParam("tax_id") int id){
         return this.tax.getTaxEntryById(id);
     }
     
     @PUT
-    @Path("/update")
+    @Path("/update{tax_id}")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     public String updateTaxEntryById(@PathParam("tax_id") int id, 
@@ -58,8 +58,9 @@ public class TaxService {
     }
     
     @DELETE
-    @Path("/delete")
+    @Path("/delete/{tax_id}")
     @Produces(MediaType.TEXT_PLAIN)
+    
     public String deleteTaxEntryById(@PathParam("tax_id") int id){
         return this.tax.deleteTaxEntryById(id);
     }
