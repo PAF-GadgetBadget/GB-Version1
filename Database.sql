@@ -183,6 +183,37 @@ LOCK TABLES `tax` WRITE;
 INSERT INTO `tax` VALUES (2,300,'2021-01-03','2022-02-03'),(3,100,'2021-02-03','2022-02-03'),(4,4000,'2021-04-11','2024-04-11');
 /*!40000 ALTER TABLE `tax` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `userID` int NOT NULL AUTO_INCREMENT,
+  `userCode` varchar(10) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `NIC` varchar(10) DEFAULT NULL,
+  `userEmail` varchar(45) DEFAULT NULL,
+  `userPhone` varchar(10) DEFAULT NULL,
+  `userType` varchar(30) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'001','Ryni Rodrigo','997282561v','ryni123@gmail.com','0718925678','admin','Ryni','ryy**%999'),(2,'002','Risal Perera','92754638v','rsal@gmail.com','0716028567','admin','Risali','Risal##77'),(4,'004','Mubarak','640675645v','mubarak64@gmail.com','0719078222','Customer','Mubarak','ghs$$84'),(5,'005','Kishan','908754614v','kishan@yahoo.com','0725467587','researcher','Kishan','ksi##@@'),(6,'006','Nisha','857754645v','nisha@yahoo.com','0729465678','researcher','Nisha','Nisha5%%'),(7,'007','Kasthur','886453423v','kasthur@gmail.com','0717654356','Customer','Kasthur','kas%%4');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -193,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-25 22:26:36
+-- Dump completed on 2021-04-25 22:53:17
