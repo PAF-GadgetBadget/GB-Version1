@@ -18,7 +18,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class TaxService {
 	
 	Tax tax = new Tax();
-
+//add service
     @POST
     @Path("/add")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
